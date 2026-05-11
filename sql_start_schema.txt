@@ -1,0 +1,54 @@
+USE dw;
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'Dim_Investor') AND type = 'U')
+BEGIN
+    CREATE TABLE Dim_Investor (
+        InvestorKey       INT IDENTITY(1,1) PRIMARY KEY,
+        Gender            NVARCHAR(10),
+        Age               INT,
+        Factor            NVARCHAR(20),
+        Objective         NVARCHAR(50),
+        Savings_Objective NVARCHAR(50),
+        Source            NVARCHAR(50),
+        Stock_Market      NVARCHAR(5),
+        Invest_Monitor    NVARCHAR(10)
+    );
+END
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'Dim_Investment_Profile') AND type = 'U')
+BEGIN
+    CREATE TABLE Dim_Investment_Profile (
+        ProfileKey      INT IDENTITY(1,1) PRIMARY KEY,
+        Avenue          NVARCHAR(50),
+        Purpose         NVARCHAR(50),
+        Duration        NVARCHAR(20),
+        Expect          NVARCHAR(20),
+        Reason_Equity   NVARCHAR(50),
+        Reason_Mutual   NVARCHAR(50),
+        Reason_Bonds    NVARCHAR(50),
+        Reason_FD       NVARCHAR(50),
+        Inv_Avenues     NVARCHAR(5)
+    );
+END
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'Fact_Investment') AND type = 'U')
+BEGIN
+    CREATE TABLE Fact_Investment (
+        InvestmentKey    INT IDENTITY(1,1) PRIMARY KEY,
+        InvestorKey      INT NOT NULL
+            CONSTRAINT FK_Fact_Investor FOREIGN KEY REFERENCES Dim_Investor(InvestorKey),
+        ProfileKey       INT NOT NULL
+            CONSTRAINT FK_Fact_Profile  FOREIGN KEY REFERENCES Dim_Investment_Profile(ProfileKey),
+        Mutual_Funds     INT,
+        Equity_Market    INT,
+        Debentures       INT,
+        Government_Bonds INT,
+        Fixed_Deposits   INT,
+        PPF              INT,
+        Gold             INT
+    );
+END
+GO

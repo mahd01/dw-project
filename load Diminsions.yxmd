@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2025.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="198" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Investment_Avenues" selected="True" rename="Inv_Avenues" />
+            <SelectField field="gender" selected="False" rename="Gender" />
+            <SelectField field="Duration2" selected="False" />
+            <SelectField field="Duration1" selected="False" />
+            <SelectField field="Source" selected="False" />
+            <SelectField field="Reason_FD" selected="True" />
+            <SelectField field="Reason_Bonds" selected="True" />
+            <SelectField field="Reason_Mutual" selected="True" />
+            <SelectField field="Reason_Equity" selected="True" />
+            <SelectField field="What are your savings objectives?" selected="False" rename="Savings_Objective" />
+            <SelectField field="Avenue" selected="True" />
+            <SelectField field="Expect" selected="True" />
+            <SelectField field="Invest_Monitor" selected="False" />
+            <SelectField field="Duration" selected="True" />
+            <SelectField field="Purpose" selected="True" />
+            <SelectField field="Objective" selected="False" />
+            <SelectField field="Factor" selected="False" />
+            <SelectField field="Stock_Marktet" selected="False" rename="Stock_Market" />
+            <SelectField field="Gold" selected="False" />
+            <SelectField field="PPF" selected="False" />
+            <SelectField field="Fixed_Deposits" selected="False" />
+            <SelectField field="Government_Bonds" selected="False" />
+            <SelectField field="Debentures" selected="False" />
+            <SelectField field="Equity_Market" selected="False" />
+            <SelectField field="Mutual_Funds" selected="False" />
+            <SelectField field="age" selected="False" rename="Age" />
+            <SelectField field="Duration3" selected="False" />
+            <SelectField field="ProfileKey" selected="True" />
+            <SelectField field="InvestorKey" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="354" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="18">odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||Dim_Investment_Profile</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <TransactionSize>0</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="ByName" />
+            </AppendMap>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Delete</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Source=localhost\SQLEXPRESS
+Catalog=dw
+Query=Dim_Investment_Profile</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="18" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="18">odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],
+	[Destination 1].[InvestorKey],
+	[Destination 1].[gender],
+	[Destination 1].[age],
+	[Destination 1].[Investment_Avenues],
+	[Destination 1].[Mutual_Funds],
+	[Destination 1].[Equity_Market],
+	[Destination 1].[Debentures],
+	[Destination 1].[Government_Bonds],
+	[Destination 1].[Fixed_Deposits],
+	[Destination 1].[PPF],
+	[Destination 1].[Gold],
+	[Destination 1].[Stock_Marktet],
+	[Destination 1].[Factor],
+	[Destination 1].[Objective],
+	[Destination 1].[Purpose],
+	[Destination 1].[Duration],
+	[Destination 1].[Invest_Monitor],
+	[Destination 1].[Expect],
+	[Destination 1].[Avenue],
+	[Destination 1].[What are your savings objectives?],
+	[Destination 1].[Reason_Equity],
+	[Destination 1].[Reason_Mutual],
+	[Destination 1].[Reason_Bonds],
+	[Destination 1].[Reason_FD],
+	[Destination 1].[Source],
+	[Destination 1].[Duration1],
+	[Destination 1].[Duration2],
+	[Destination 1].[Duration3] 
+from [Destination 1]</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>False</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Source=localhost\SQLEXPRESS
+Catalog=dw
+Query=select [Destination 1].[Prof...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ProfileKey" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="Double" />
+            <Field name="InvestorKey" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="Double" />
+            <Field name="gender" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="age" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Investment_Avenues" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Mutual_Funds" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Equity_Market" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Debentures" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Government_Bonds" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Fixed_Deposits" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="PPF" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Gold" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Stock_Marktet" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Factor" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Objective" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Purpose" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Duration" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Invest_Monitor" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Expect" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Avenue" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="What are your savings objectives?" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Reason_Equity" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Reason_Mutual" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Reason_Bonds" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Reason_FD" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Source" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Duration1" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Duration2" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+            <Field name="Duration3" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||select [Destination 1].[ProfileKey],&#xA;	[Destination 1].[InvestorKey],&#xA;	[Destination 1].[gender],&#xA;	[Destination 1].[age],&#xA;	[Destination 1].[Investment_Avenues],&#xA;	[Destination 1].[Mutual_Funds],&#xA;	[Destination 1].[Equity_Market],&#xA;	[Destination 1].[Debentures],&#xA;	[Destination 1].[Government_Bonds],&#xA;	[Destination 1].[Fixed_Deposits],&#xA;	[Destination 1].[PPF],&#xA;	[Destination 1].[Gold],&#xA;	[Destination 1].[Stock_Marktet],&#xA;	[Destination 1].[Factor],&#xA;	[Destination 1].[Objective],&#xA;	[Destination 1].[Purpose],&#xA;	[Destination 1].[Duration],&#xA;	[Destination 1].[Invest_Monitor],&#xA;	[Destination 1].[Expect],&#xA;	[Destination 1].[Avenue],&#xA;	[Destination 1].[What are your savings objectives?],&#xA;	[Destination 1].[Reason_Equity],&#xA;	[Destination 1].[Reason_Mutual],&#xA;	[Destination 1].[Reason_Bonds],&#xA;	[Destination 1].[Reason_FD],&#xA;	[Destination 1].[Source],&#xA;	[Destination 1].[Duration1],&#xA;	[Destination 1].[Duration2],&#xA;	[Destination 1].[Duration3] &#xA;from [Destination 1]" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="210" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Investment_Avenues" selected="False" />
+            <SelectField field="gender" selected="True" rename="Gender" />
+            <SelectField field="Duration2" selected="False" />
+            <SelectField field="Duration1" selected="False" />
+            <SelectField field="Source" selected="True" />
+            <SelectField field="Reason_FD" selected="False" />
+            <SelectField field="Reason_Bonds" selected="False" />
+            <SelectField field="Reason_Mutual" selected="False" />
+            <SelectField field="Reason_Equity" selected="False" />
+            <SelectField field="What are your savings objectives?" selected="True" rename="Savings_Objective" />
+            <SelectField field="Avenue" selected="False" />
+            <SelectField field="Expect" selected="False" />
+            <SelectField field="Invest_Monitor" selected="True" />
+            <SelectField field="Duration" selected="False" />
+            <SelectField field="Purpose" selected="False" />
+            <SelectField field="Objective" selected="True" />
+            <SelectField field="Factor" selected="True" />
+            <SelectField field="Stock_Marktet" selected="True" rename="Stock_Market" />
+            <SelectField field="Gold" selected="False" />
+            <SelectField field="PPF" selected="False" />
+            <SelectField field="Fixed_Deposits" selected="False" />
+            <SelectField field="Government_Bonds" selected="False" />
+            <SelectField field="Debentures" selected="False" />
+            <SelectField field="Equity_Market" selected="False" />
+            <SelectField field="Mutual_Funds" selected="False" />
+            <SelectField field="age" selected="True" rename="Age" />
+            <SelectField field="Duration3" selected="False" />
+            <SelectField field="ProfileKey" selected="False" />
+            <SelectField field="InvestorKey" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="366" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="18">odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dw;Data Source=localhost\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MAHD;Use Encryption for Data=False;Tag with column collation when possible=False|||Dim_Investor</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <TransactionSize>0</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Delete</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Source=localhost\SQLEXPRESS
+Catalog=dw
+Query=Dim_Investor</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <DefaultTZ value="Local" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>load Diminsions</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="dc87469e-607b-4238-92dd-ed2dc93233dc" />
+      <Telemetry>
+        <PreviousWorkflowId value="dde2ad6b-f859-4f4e-9b69-807f0a60a205" />
+        <OriginWorkflowId value="873192f2-541b-4f9b-b7c4-0ef07143ead1" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
